@@ -38,7 +38,7 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 Clone the repo using [Github Desktop](https://desktop.github.com/) or the commandline via:
 
 ```
-git clone https://github.com/spacesys-finch/payload-designer.git
+git clone git@github.com:spacesys-finch/Smile-Keystone.git
 ```
 
 From within the cloned repo, run poetry's install command to install all the dependencies in one go:
