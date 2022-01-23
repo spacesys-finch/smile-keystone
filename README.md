@@ -26,13 +26,13 @@ If not already installed, install [git](https://git-scm.com/).
 
 The repo employs [poetry](https://python-poetry.org/) as its dependency and environment manager. 
 
-To install poetry through Windows Powershell:
-```
-(Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py -UseBasicParsing).Content | python -
-```
 To install poetry through OSX, Linux or Bash on Windows:
 ```
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -sSL https://install.python-poetry.org | python3 -
+```
+To install poetry through Windows Powershell:
+```
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
 ```
 
 Clone the repo using [Github Desktop](https://desktop.github.com/) or the commandline via:
