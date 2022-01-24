@@ -43,7 +43,7 @@ cd /Applications/Python\ [whatever python version you have (eg. 3.8)]/
 Clone the repo using [Github Desktop](https://desktop.github.com/) or the commandline via:
 
 ```
-git clone https://github.com/spacesys-finch/Smile-Keystone.git
+git clone https://github.com/spacesys-finch/smile-keystone.git
 ```
 
 From within the cloned repo, run poetry's install command to install all the dependencies in one go:
