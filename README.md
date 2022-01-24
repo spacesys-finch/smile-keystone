@@ -26,13 +26,18 @@ If not already installed, install [git](https://git-scm.com/).
 
 The repo employs [poetry](https://python-poetry.org/) as its dependency and environment manager. 
 
-To install poetry through OSX, Linux or Bash on Windows:
-```
-curl -sSL https://install.python-poetry.org | python3 -
-```
 To install poetry through Windows Powershell:
 ```
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+```
+To install poetry through OSX or Linux:
+```
+curl -sSL https://install.python-poetry.org | python3 -
+```
+For mac users, you may need to install a certificate using:
+```
+cd /Applications/Python\ [whatever python version you have (eg. 3.8)]/
+./Install\ Certificates.command
 ```
 
 Clone the repo using [Github Desktop](https://desktop.github.com/) or the commandline via:
@@ -47,6 +52,11 @@ poetry install
 ```
 
 Configure your IDE to use the virtual environment poetry has created at `C:\Users\<USERNAME>\AppData\Local\pypoetry\Cache\virtualenvs`. In the case of [VSCode](https://code.visualstudio.com/), enter the command pallet by going to `View>Command Palette` and search for `Python:Select Interpreter`. Select the appropriate poetry virtual environment for the repo. Restart VSCode if you do not see it listed.
+
+If unable to configure IDE to virtual env poetry created, you can enter it manually in the IDE terminal using:
+```
+poetry shell
+```
 
 Install the pre-commit script and hooks using:
 ```
