@@ -1,7 +1,6 @@
 # Data-Processing: Smile/Keystone Distortion
 
-Quantification and correction of Smile and Keystone distortion; 
-Part of the ground processing architecture for FINCH's SWIR hyperspectral pushbroom imagery.
+Quantification and correction of Smile and Keystone distortions; part of the ground processing architecture for FINCH's SWIR hyperspectral pushbroom imagery.
 
 Given the comms error-corrected, reconstructed data cube, we will be generating Level 1B data. See the ground processing flowchat on our Confluence page for a high-level breakdown of the steps involved: http://spacesys.utat.ca/confluence/display/FIN/Ground+Processing+Flowchart
 
@@ -40,18 +39,30 @@ cd /Applications/Python\ [whatever python version you have (eg. 3.8)]/
 ./Install\ Certificates.command
 ```
 
+And on Linux or macOS with:
+
+```
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python3 -
+```
+
+The output will include the following line. Ensure that the filepath in brackets (the one in your PowerShell/terminal) has been [added to your Windows PATH](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/) or [Linux/macOS PATH](https://stackoverflow.com/a/19663996): 
+
+```
+To get started you need Poetry's bin directory (C:\Users\WDAGUtilityAccount\AppData\Roaming\Python\Scripts) in your `PATH`
+environment variable.
+```
+
 Clone the repo using [Github Desktop](https://desktop.github.com/) or the commandline via:
 
 ```
-git clone https://github.com/spacesys-finch/smile-keystone.git
+git clone https://github.com/spacesys-finch/[name of the repo].git
 ```
 
 From within the cloned repo, run poetry's install command to install all the dependencies in one go:
 ```
 poetry install
 ```
-
-Configure your IDE to use the virtual environment poetry has created at `C:\Users\<USERNAME>\AppData\Local\pypoetry\Cache\virtualenvs`. In the case of [VSCode](https://code.visualstudio.com/), enter the command pallet by going to `View>Command Palette` and search for `Python:Select Interpreter`. Select the appropriate poetry virtual environment for the repo. Restart VSCode if you do not see it listed.
+Configure your IDE to use the virtual environment poetry has created at `C:\Users\<USERNAME>\AppData\Local\pypoetry\Cache\virtualenvs` (you can also find it with the command `poetry show -v`). In the case of [VSCode](https://code.visualstudio.com/), enter the command pallet by going to `View>Command Palette` and search for `Python:Select Interpreter`. Select the appropriate poetry virtual environment for the repo (usually includes a long jumbled name in brackets). Restart VSCode if you do not see it listed. Once the intepreter is changed, restart your terminal by [deleting the old one](https://code.visualstudio.com/docs/editor/integrated-terminal#_managing-terminals) and launching it again.
 
 If unable to configure IDE to virtual env poetry created, you can enter it manually in the IDE terminal using:
 ```
@@ -77,6 +88,12 @@ This repo uses [pytest](https://docs.pytest.org/en/6.2.x/) for unit testing. To 
 
 ```
 pytest -v
+```
+
+If this command did not work, the IDE did not launch a terminal with the virtual environment loaded. Before launching any commands, enter the environment with:
+
+```
+poetry shell
 ```
 
 You can find an interactive report of test results in `./logs/pytest/pytest-report.html`. Individual tests can also be specified as follows:
