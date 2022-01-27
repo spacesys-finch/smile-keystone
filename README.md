@@ -12,12 +12,14 @@ Built by the [University of Toronto Aerospace Team](https://www.utat.ca/space-sy
 ## Setup
 This section will take you through the procedure to configure your development environment. At a glance:
 1. Install project's python version
-1. Install git
-1. Install poetry
-1. Clone repository
-1. Run poetry install
-1. Configure IDE virtual environment
-1. Install pre-commit hooks
+2. Install git
+3. Install poetry
+4. Clone repository
+5. Run poetry install
+6. Configure IDE virtual environment
+7. Install pre-commit hooks
+
+### Installing git
 
 Begin by installing the project's python version. See the badges at the top of the README for the version number.
 
@@ -25,32 +27,31 @@ If not already installed, install [git](https://git-scm.com/).
 
 The repo employs [poetry](https://python-poetry.org/) as its dependency and environment manager.
 
+### Installing poetry
+
 To install poetry through Windows Powershell:
 ```
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
 ```
-To install poetry through OSX or Linux:
+To install poetry through macOS or Linux:
 ```
 curl -sSL https://install.python-poetry.org | python3 -
 ```
-For mac users, you may need to install a certificate using:
+For mac users, you may get an error saying you need to install a certificate, which you can do using:
 ```
 cd /Applications/Python\ [whatever python version you have (eg. 3.8)]/
 ./Install\ Certificates.command
 ```
 
-And on Linux or macOS with:
-
-```
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python3 -
-```
-
-The output will include the following line. Ensure that the filepath in brackets (the one in your PowerShell/terminal) has been [added to your Windows PATH](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/) or [Linux/macOS PATH](https://apple.stackexchange.com/a/358873):
+The output will include something like the following line: 
 
 ```
 To get started you need Poetry's bin directory (C:\Users\WDAGUtilityAccount\AppData\Roaming\Python\Scripts) in your `PATH`
 environment variable.
 ```
+Ensure that the filepath in brackets (the one in your PowerShell/terminal) has been [added to your Windows PATH](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/) or [Linux/macOS PATH](https://stackoverflow.com/a/19663996)
+
+### Cloning the repo
 
 Clone the repo using [Github Desktop](https://desktop.github.com/) or the commandline via:
 
@@ -58,16 +59,21 @@ Clone the repo using [Github Desktop](https://desktop.github.com/) or the comman
 git clone https://github.com/spacesys-finch/[name of the repo].git
 ```
 
+### Running poetry install
+
 From within the cloned repo, run poetry's install command to install all the dependencies in one go:
 ```
 poetry install
 ```
+### Configuring IDE virtual env
+
 Configure your IDE to use the virtual environment poetry has created at `C:\Users\<USERNAME>\AppData\Local\pypoetry\Cache\virtualenvs` (you can also find it with the command `poetry show -v`). In the case of [VSCode](https://code.visualstudio.com/), enter the command pallet by going to `View>Command Palette` and search for `Python:Select Interpreter`. Select the appropriate poetry virtual environment for the repo (usually includes a long jumbled name in brackets). Restart VSCode if you do not see it listed. Once the intepreter is changed, restart your terminal by [deleting the old one](https://code.visualstudio.com/docs/editor/integrated-terminal#_managing-terminals) and launching it again.
 
 If unable to configure IDE to virtual env poetry created, you can enter it manually in the IDE terminal using:
 ```
 poetry shell
 ```
+### Installing pre-commit hooks
 
 Install the pre-commit script and hooks using:
 ```
