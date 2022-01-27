@@ -43,13 +43,13 @@ cd /Applications/Python\ [whatever python version you have (eg. 3.8)]/
 ./Install\ Certificates.command
 ```
 
-The output will include something like the following line: 
+The output will include something like the following line:
 
 ```
 To get started you need Poetry's bin directory (C:\Users\WDAGUtilityAccount\AppData\Roaming\Python\Scripts) in your `PATH`
 environment variable.
 ```
-Ensure that the filepath in brackets (the one in your PowerShell/terminal) has been [added to your Windows PATH](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/) or [Linux/macOS PATH](https://stackoverflow.com/a/19663996)
+Ensure that the filepath in brackets (the one in your PowerShell/terminal) has been [added to your Windows PATH](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/) or [Linux/macOS PATH](https://apple.stackexchange.com/a/358873)
 
 ### Cloning the repo
 
